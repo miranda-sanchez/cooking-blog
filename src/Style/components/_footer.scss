@@ -1,0 +1,9 @@
+@use "../base/colors.scss" as *;
+
+footer {
+    width: 100%;
+    text-align: center;
+    background: $main;
+    color: $white;
+    padding: 10px;
+}
