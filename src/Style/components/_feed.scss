@@ -3,18 +3,15 @@
 .feed {
     margin: 20px 10px;
     display: grid;
-    grid-template-columns: repeat( auto-fit, minmax(300px, 1fr) );
-    row-gap: 20px;
+    grid-template-columns: repeat( auto-fit, minmax(500px, 1fr) );
+    row-gap: 30px;
     column-gap: 20px;
     .post{
         border: 2px solid $main;
         border-top: 4px solid $main;
         border-radius: 10px;
         padding: 10px;
-        a, a:active, a:visited{
-            color: #000;
-            text-decoration: none;
-        }
+        
         span {
             padding: 5px;
             border-radius: 10px;

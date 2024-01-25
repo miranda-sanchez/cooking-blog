@@ -37,7 +37,7 @@ const Nav = () => {
             </li>
             <li>
               <Link class="nav-link" to="/post">
-                New Posts
+                Post
               </Link>
             </li>
             <li>

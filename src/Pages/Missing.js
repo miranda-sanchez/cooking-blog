@@ -1,9 +1,14 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Missing = () => {
   return (
     <main>
-      <h2>Missing</h2>
+      <p>Post not found.</p>
+      <p>Head back to the home page for more interesting reads.</p>
+      <button>
+        <Link to="/">Home</Link>
+      </button>
     </main>
   );
 };

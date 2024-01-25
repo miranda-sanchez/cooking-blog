@@ -6,4 +6,17 @@ footer {
     background: $main;
     color: $white;
     padding: 10px;
+    ul {
+        display: flex;
+        justify-content: center;
+        li {
+            list-style-type: none;
+            margin: 0 2rem;
+            a, a:active, a:visited{
+                color: $white;
+                text-decoration: none;
+                
+              }
+        }
+    }
 }
