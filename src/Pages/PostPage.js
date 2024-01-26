@@ -8,7 +8,7 @@ const PostPage = ({ posts, handleDelete }) => {
 
   return (
     <main>
-      <article className="post">
+      <article className="postPage">
         {post && (
           <>
             <span className="postDate">{post.datetime}</span>

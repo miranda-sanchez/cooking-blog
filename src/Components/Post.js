@@ -10,9 +10,7 @@ const Post = ({ post }) => {
         <span className="postDate">{post.datetime}</span>
         <h2>{post.title}</h2>
         <p className="postBody">
-          {post.body.length <= 100
-            ? post.body
-            : `${post.body.slice(0, 100)}...`}
+          {post.body.length <= 40 ? post.body : `${post.body.slice(0, 40)}...`}
         </p>
         <button>
           Read more <FontAwesomeIcon icon={faAngleRight} />

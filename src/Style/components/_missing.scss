@@ -1,0 +1,11 @@
+.missing {
+    text-align: center;
+    figure{
+        display: flex;
+        justify-content: center;
+        .missing-drawing {
+        height: 20rem;
+        margin: 0 auto ;
+    }
+    }
+}

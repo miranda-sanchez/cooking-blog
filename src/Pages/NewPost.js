@@ -9,26 +9,33 @@ const NewPost = ({
 }) => {
   return (
     <main>
-      <h2>New post</h2>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="postTitle">Title</label>
-        <input
-          id="postTitle"
-          type="text"
-          required
-          value={postTitle}
-          onChange={(e) => setPostTitle(e.target.value)}
-        />
-        <label htmlFor="postBody">Post</label>
-        <textarea
-          name="postBody"
-          id="postBody"
-          cols="30"
-          rows="10"
-          required
-          value={postBody}
-          onChange={(e) => setPostBody(e.target.value)}
-        ></textarea>
+      <h1>New post</h1>
+      <form onSubmit={handleSubmit} className="newpost">
+        <div className="form-floating mb-3">
+          <input
+            id="postTitle"
+            type="text"
+            className="form-control"
+            placeholder="Title"
+            required
+            value={postTitle}
+            onChange={(e) => setPostTitle(e.target.value)}
+          />
+          <label htmlFor="postTitle">Title</label>
+        </div>
+
+        <div className="form-floating">
+          <textarea
+            id="postBody"
+            className="form-control"
+            placeholder="Post"
+            required
+            value={postBody}
+            onChange={(e) => setPostBody(e.target.value)}
+          ></textarea>
+          <label htmlFor="postBody">Post</label>
+        </div>
+
         <button type="submit">Submit</button>
       </form>
     </main>

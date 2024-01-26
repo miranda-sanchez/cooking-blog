@@ -1,13 +1,19 @@
 @use "../base/_colors.scss" as *;
 
 button {
-    padding: 5px 15px;
-    border-radius: 5px;
+    padding: 5px 20px;
+    border-radius: 10px;
     border: 2px solid $main;
     border-top: 4px solid $main;
     transition: background-color 0.3s ease, color 0.3s ease;
+    background-color: $main;
+    color: $white;
+    
     &:hover {
-        background-color: rgba($main, 0.7);
-        color: white;
+        background-color: rgba($main, 0.3);
+        color: $main;
+    }
+    a, a:active {
+        color: $white;
     }
 }
