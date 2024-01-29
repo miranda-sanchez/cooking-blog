@@ -36,7 +36,9 @@ const NewPost = ({
           <label htmlFor="postBody">Post</label>
         </div>
 
-        <button type="submit">Submit</button>
+        <button className="call-to-action" type="submit">
+          Submit
+        </button>
       </form>
     </main>
   );

@@ -1,8 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
+import { FaBars, FaTimes } from "react-icons/fa";
 
 const Nav = () => {
   const [isMenuExpanded, setMenuExpanded] = useState(false);
@@ -12,10 +11,10 @@ const Nav = () => {
   };
 
   return (
-    <nav class="navbar sticky-top navbar-expand-lg bg-body-tertiary">
-      <div class="container-fluid">
+    <nav className="navbar sticky-top navbar-expand-lg bg-body-tertiary">
+      <div className="container-fluid">
         <button
-          class="navbar-toggler"
+          className="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarSupportedContent"
@@ -24,24 +23,22 @@ const Nav = () => {
           aria-label="Toggle navigation"
           onClick={toggleMenu}
         >
-          <span>
-            <FontAwesomeIcon icon={isMenuExpanded ? faTimes : faBars} />
-          </span>
+          <span>{isMenuExpanded ? <FaTimes /> : <FaBars />}</span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <Link class="nav-link" to="/">
+        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+            <li className="nav-item">
+              <Link className="nav-link" to="/">
                 Home
               </Link>
             </li>
             <li>
-              <Link class="nav-link" to="/post">
+              <Link className="nav-link" to="/post">
                 Post
               </Link>
             </li>
             <li>
-              <Link class="nav-link" to="/about">
+              <Link className="nav-link" to="/about">
                 About
               </Link>
             </li>

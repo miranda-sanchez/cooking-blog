@@ -13,7 +13,7 @@
       width: 100%;
       padding: 10px;
       margin-bottom: 10px;
-      border: 1px solid #ccc;
+      border: 1px solid $gray;
       border-radius: 10px;
       &:focus {
         outline: none;
@@ -26,12 +26,5 @@
     }
     #postBody {
         height: 500px;
-    }
-    button {
-      border-color: $orange;
-      background-color: $orange;
-      &:hover {
-        background-color: rgba($orange, 0.3);
-      }
-    }
-  }
+    }     
+}

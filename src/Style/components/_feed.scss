@@ -1,16 +1,16 @@
 @use "../base/_colors.scss" as *;
 
 .feed {
-    margin: 20px 10px;
-    display: grid;
-    grid-template-columns: repeat( auto-fit, minmax(500px, 1fr) );
-    row-gap: 0;
-    column-gap: 20px;
     .post{
-        border-bottom: 2px solid $main;
-        //border-top: 4px solid $main;
-        border-radius: 30px  ;
-        padding: 20px;
+        border-bottom: 1px solid rgba($gray, 0.4);
+        padding: 20px 0;
+        &:last-child {
+            border-bottom: none;
+        }
+        span {
+            color: $gray;
+            font-size: 0.9rem;
+        }
         
     }
 }

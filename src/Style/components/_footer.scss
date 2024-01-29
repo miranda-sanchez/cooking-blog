@@ -11,12 +11,14 @@ footer {
         justify-content: center;
         li {
             list-style-type: none;
-            margin: 0 2rem;
+            margin: 0 1rem;
             a, a:active, a:visited{
                 color: $white;
                 text-decoration: none;
-                
               }
+            a:hover {
+                color: rgba($white, 0.8);
+            }
         }
     }
 }

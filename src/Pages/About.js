@@ -12,9 +12,10 @@ const About = () => {
         a reader; you can add your recipes and even remove them. Join the fun!
         <br /> Let's explore the intersection of cooking and coding together!
       </p>
-      <button>
-        <Link to="/post">Add a post!</Link>
-      </button>
+
+      <Link to="/post">
+        <button className="call-to-action">Add a post!</button>
+      </Link>
     </main>
   );
 };

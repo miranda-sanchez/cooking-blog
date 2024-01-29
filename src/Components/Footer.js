@@ -1,7 +1,5 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faLinkedin, faGithub } from "react-icons/fa";
 
 const Footer = () => {
   const today = new Date();
@@ -11,12 +9,12 @@ const Footer = () => {
       <ul>
         <li>
           <a href="https://www.linkedin.com/in/miranda--sanchez/">
-            <FontAwesomeIcon icon={faLinkedin} size="2x" />
+            <faLinkedin />
           </a>
         </li>
         <li>
           <a href="https://github.com/miranda-sanchez">
-            <FontAwesomeIcon icon={faGithub} size="2x" />
+            <faGithub />
           </a>
         </li>
       </ul>
