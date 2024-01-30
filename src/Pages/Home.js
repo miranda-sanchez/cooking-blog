@@ -1,8 +1,11 @@
 import React from "react";
 import Feed from "./Feed";
 import { FaExclamationTriangle, FaSadCry } from "react-icons/fa";
+import { useContext } from "react";
+import DataContext from "../context/DataContext";
 
-const Home = ({ posts, fetchError, isLoading }) => {
+const Home = () => {
+  const { searchResults, fetchError, isLoading } = useContext(DataContext);
   return (
     <main>
       {isLoading && <p className="status-msg">Loading posts...</p>}
@@ -17,8 +20,8 @@ const Home = ({ posts, fetchError, isLoading }) => {
       )}
       {!isLoading &&
         !fetchError &&
-        (posts.length ? (
-          <Feed posts={posts}></Feed>
+        (searchResults.length ? (
+          <Feed posts={searchResults}></Feed>
         ) : (
           <div
             className="alert alert-primary d-flex align-items-center"

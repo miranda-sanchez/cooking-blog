@@ -1,5 +1,5 @@
 import React from "react";
-import { faLinkedin, faGithub } from "react-icons/fa";
+import { FaLinkedin, FaGithub } from "react-icons/fa";
 
 const Footer = () => {
   const today = new Date();
@@ -9,12 +9,12 @@ const Footer = () => {
       <ul>
         <li>
           <a href="https://www.linkedin.com/in/miranda--sanchez/">
-            <faLinkedin />
+            <FaLinkedin />
           </a>
         </li>
         <li>
           <a href="https://github.com/miranda-sanchez">
-            <faGithub />
+            <FaGithub />
           </a>
         </li>
       </ul>

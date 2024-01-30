@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { faAngleRight } from "react-icons/fa";
+import { FaAngleRight } from "react-icons/fa";
 
 const Post = ({ post }) => {
   return (
@@ -14,7 +14,7 @@ const Post = ({ post }) => {
             : `${post.body.slice(0, 100)}...`}
         </p>
         <button>
-          Read more <faAngleRight />
+          Read more <FaAngleRight />
         </button>
       </Link>
     </article>

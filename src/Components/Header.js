@@ -2,8 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../Img/logo.PNG";
 import { FaSearch, FaLaptop, FaTabletAlt, FaMobileAlt } from "react-icons/fa";
+import { useContext } from "react";
+import DataContext from "../context/DataContext";
 
-function Header({ search, setSearch, width }) {
+function Header() {
+  const { width, search, setSearch } = useContext(DataContext);
   const headerContainerHeight =
     width >= 1200
       ? 500
