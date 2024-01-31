@@ -6,6 +6,8 @@ import "./index.css";
 import { Helmet } from "react-helmet";
 import App from "./App";
 import { BrowserRouter as Router } from "react-router-dom";
+import { StoreProvider } from "easy-peasy";
+import store from "./store";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -14,8 +16,10 @@ root.render(
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <title>Cooking Blog</title>
     </Helmet>
-    <Router>
-      <App />
-    </Router>
+    <StoreProvider store={store}>
+      <Router>
+        <App />
+      </Router>
+    </StoreProvider>
   </React.StrictMode>
 );

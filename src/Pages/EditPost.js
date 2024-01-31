@@ -1,33 +1,26 @@
 import React from "react";
-import { useEffect, useContext, useState } from "react";
+import { useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { format } from "date-fns";
 import Missing from "./Missing";
-import DataContext from "../context/DataContext";
-import api from "../api/posts";
+import { useStoreState, useStoreActions } from "easy-peasy";
 
 const EditPost = () => {
-  const [editTitle, setEditTitle] = useState("");
-  const [editBody, setEditBody] = useState("");
-  const { posts, setPosts } = useContext(DataContext);
   const { id } = useParams();
-  const post = posts.find((post) => post.id.toString() === id);
   const navigate = useNavigate();
+  const editTitle = useStoreState((state) => state.editTitle);
+  const editBody = useStoreState((state) => state.editBody);
+  const editPost = useStoreActions((actions) => actions.editPost);
+  const setEditTitle = useStoreActions((actions) => actions.setEditTitle);
+  const setEditBody = useStoreActions((actions) => actions.setEditBody);
+  const getPostById = useStoreState((state) => state.getPostById);
+  const post = getPostById(id);
 
-  const handleEdit = async (id) => {
+  const handleEdit = (id) => {
     const dateTime = format(new Date(), "mm/dd/yyyy pp");
     const updatedPost = { id, dateTime, title: editTitle, body: editBody };
-    try {
-      const response = await api.put(`/posts/${id}`, updatedPost);
-      setPosts(
-        posts.map((post) => (post.id === id ? { ...response.data } : post))
-      );
-      setEditTitle("");
-      setEditBody("");
-      navigate("/");
-    } catch (err) {
-      console.log(`Error: ${err.message}`);
-    }
+    editPost(updatedPost);
+    navigate(`/post/${id}`);
   };
 
   useEffect(() => {
@@ -69,7 +62,7 @@ const EditPost = () => {
 
             <button
               className="call-to-action"
-              type="submit"
+              type="button"
               onClick={() => handleEdit(post.id)}
             >
               Submit

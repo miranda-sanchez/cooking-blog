@@ -1,12 +1,30 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../Img/logo.PNG";
-import { FaSearch, FaLaptop, FaTabletAlt, FaMobileAlt } from "react-icons/fa";
-import { useContext } from "react";
-import DataContext from "../context/DataContext";
+import { FaSearch } from "react-icons/fa";
+import { useEffect } from "react";
+import { useStoreState, useStoreActions } from "easy-peasy";
+import useWindowSize from "../hooks/useWindowSize";
 
 function Header() {
-  const { width, search, setSearch } = useContext(DataContext);
+  const posts = useStoreState((state) => state.posts);
+  const search = useStoreState((state) => state.search);
+  const setSearch = useStoreActions((actions) => actions.setSearch);
+  const setSearchResults = useStoreActions(
+    (actions) => actions.setSearchResults
+  );
+
+  useEffect(() => {
+    const filteredResults = posts.filter(
+      (post) =>
+        post.body.toLowerCase().includes(search.toLowerCase()) ||
+        post.title.toLowerCase().includes(search.toLowerCase())
+    );
+
+    setSearchResults(filteredResults.reverse());
+  }, [posts, search, setSearchResults]);
+
+  const { width } = useWindowSize();
   const headerContainerHeight =
     width >= 1200
       ? 500
