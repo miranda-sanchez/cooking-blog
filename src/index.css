@@ -74,7 +74,7 @@ a, a:active, a:visited, a:hover {
 .Header .header-container {
   display: flex;
   justify-content: space-between;
-  align-items: start;
+  align-items: flex-start;
   background-color: #365C5D;
   color: #ECF8F8;
   padding: 10px;
